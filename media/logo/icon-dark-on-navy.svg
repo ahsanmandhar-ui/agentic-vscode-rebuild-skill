@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img"
+     aria-label="VibeCode Engine logo (app icon)">
+  <rect width="128" height="128" rx="24" fill="#0B1220"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20 101 41V83L64 104 27 83V41Z" stroke="#2F6FED" stroke-width="7"/>
+    <path d="M45 50 64 84 83 50" stroke="#EAF0FF" stroke-width="9"/>
+    <circle cx="88" cy="43" r="8" fill="#0FB5A6"/>
+  </g>
+</svg>

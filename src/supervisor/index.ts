@@ -1,0 +1,22 @@
+// src/supervisor/index.ts
+export * from './types';
+export * from './protocols';
+export { AgentRegistry } from './registry';
+export { createContext, addMessage, setVariable, getVariable } from './context';
+export { createRoleAgent, buildSystemPrompt } from './roleAgent';
+export { MiddlewarePipeline, createLoggingMiddleware } from './middleware';
+export { makeHandoffResult, applyHandoff, forwardMessage } from './handoff';
+export { TaskLedger } from './ledger';
+export { Supervisor } from './supervisor';
+export { Flow } from './flow';
+export { MasterSupervisor } from './hierarchical';
+export { startChunk, endChunk, contentChunk, formatChunk } from './streaming';
+export { FileDurableStore, InMemoryDurableStore } from './durable';
+export { isSafeUrl, redactSecrets, escapeHtml } from './security';
+export { GuardrailPipeline, piiGuardrail, lengthGuardrail } from './guardrails';
+export { LocalSubprocessExecutor } from './sandbox';
+export { Tracer } from './tracing';
+export { MasterAgent } from './hierarchical-executor';
+export { runEval } from './eval';
+export { scanDirectory, extractFeatures } from './file-scanner';
+export { combineFeatures, renderFeatureList } from './feature-combiner';

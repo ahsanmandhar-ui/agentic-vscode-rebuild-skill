@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" width="480" height="160" role="img"
+     aria-label="VibeCode Engine">
+  <rect width="480" height="160" fill="none"/>
+  <g transform="translate(16,16) scale(1)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 12 109 38V90L64 116 19 90V38Z" stroke="#2F6FED" stroke-width="8"/>
+    <path d="M42 48 64 88 86 48" stroke="#EAF0FF" stroke-width="10"/>
+    <circle cx="93" cy="40" r="9" fill="#0FB5A6" stroke="none"/>
+  </g>
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif" fill="#EAF0FF">
+    <text x="164" y="76" font-size="34" font-weight="600" letter-spacing="-0.5">VibeCode Engine</text>
+    <text x="164" y="106" font-size="15" fill="#9FB0CC">Agentic coding, on your terms</text>
+  </g>
+</svg>

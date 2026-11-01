@@ -1,0 +1,302 @@
+{
+  "name": "vibecode-engine-pro-free",
+  "publisher": "AhsanMandhar",
+  "version": "0.1.53",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "VibeCode",
+      "properties": {
+        "vibecode.mcp.serverCommand": {
+          "type": "string",
+          "default": "",
+          "description": "MCP server command to auto-connect at activation (e.g. npx)."
+        },
+        "vibecode.mcp.serverArgs": {
+          "type": "string",
+          "default": "",
+          "description": "Space-separated arguments for the MCP server command."
+        },
+        "vibecode.dataClassification": {
+          "type": "string",
+          "default": "internal",
+          "enum": ["public", "internal", "confidential", "restricted"],
+          "description": "Data classification label for the workspace."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vibecode",
+          "title": "VibeCode",
+          "icon": "media/logo/activity-bar.svg"
+        }
+      ]
+    },
+    "views": {
+      "vibecode": [
+        {
+          "id": "vibecode.panel",
+          "name": "VibeCode",
+          "type": "webview"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vibecode.chat",
+        "title": "VibeCode: Open Chat"
+      },
+      {
+        "command": "vibecode.plan",
+        "title": "VibeCode: Plan"
+      },
+      {
+        "command": "vibecode.cli.run",
+        "title": "VibeCode: Run CLI"
+      },
+      {
+        "command": "vibecode.askVibeCode",
+        "title": "VibeCode: Ask VibeCode"
+      },
+      {
+        "command": "vibecode.models.connect",
+        "title": "VibeCode: Connect Model"
+      },
+      {
+        "command": "vibecode.settings.open",
+        "title": "VibeCode: Open Settings"
+      },
+      {
+        "command": "vibecode.context.create",
+        "title": "VibeCode: Create Context"
+      },
+      {
+        "command": "vibecode.context.compact",
+        "title": "VibeCode: Compact Context"
+      },
+      {
+        "command": "vibecode.retry",
+        "title": "VibeCode: Retry"
+      },
+      {
+        "command": "vibecode.diagnostics.run",
+        "title": "VibeCode: Run Diagnostics"
+      },
+      {
+        "command": "vibecode.logs.open",
+        "title": "VibeCode: Open Logs"
+      },
+      {
+        "command": "vibecode.agent.run",
+        "title": "VibeCode: Run Agent Task"
+      },
+      {
+        "command": "vibecode.skills.install",
+        "title": "VibeCode: Install Skills"
+      },
+      {
+        "command": "vibecode.search.configure",
+        "title": "VibeCode: Configure Search"
+      },
+      {
+        "command": "vibecode.plan.create",
+        "title": "VibeCode: Create Plan"
+      },
+      {
+        "command": "vibecode.progress.update",
+        "title": "VibeCode: Update Progress"
+      },
+      {
+        "command": "vibecode.routers.add",
+        "title": "VibeCode: Add Router"
+      },
+      {
+        "command": "vibecode.chat.invoke",
+        "title": "VibeCode: Invoke Chat"
+      },
+      {
+        "command": "vibecode.home.open",
+        "title": "VibeCode: Open Home"
+      },
+      {
+        "command": "vibecode.onboarding.start",
+        "title": "VibeCode: Start Onboarding"
+      },
+      {
+        "command": "vibecode.edit.apply",
+        "title": "VibeCode: Apply Edit"
+      },
+      {
+        "command": "vibecode.terminal.run",
+        "title": "VibeCode: Run Terminal"
+      },
+      {
+        "command": "vibecode.git.status",
+        "title": "VibeCode: Git Status"
+      },
+      {
+        "command": "vibecode.git.commit",
+        "title": "VibeCode: Git Commit"
+      },
+      {
+        "command": "vibecode.edit.preview",
+        "title": "VibeCode: Preview Edit"
+      },
+      {
+        "command": "vibecode.checkpoint.save",
+        "title": "VibeCode: Save Checkpoint"
+      },
+      {
+        "command": "vibecode.checkpoint.restore",
+        "title": "VibeCode: Restore Checkpoint"
+      },
+      {
+        "command": "vibecode.mcp.connect",
+        "title": "VibeCode: Connect MCP Server"
+      },
+      {
+        "command": "vibecode.backup.export",
+        "title": "VibeCode: Export Backup"
+      },
+      {
+        "command": "vibecode.backup.import",
+        "title": "VibeCode: Import Backup"
+      },
+      {
+        "command": "vibecode.git.branch",
+        "title": "VibeCode: Git Branch"
+      },
+      {
+        "command": "vibecode.git.log",
+        "title": "VibeCode: Git Log"
+      },
+      {
+        "command": "vibecode.data.delete",
+        "title": "VibeCode: Delete All Data"
+      },
+      {
+        "command": "vibecode.data.consent",
+        "title": "VibeCode: Telemetry Consent"
+      },
+      {
+        "command": "vibecode.checkpoint.save",
+        "title": "VibeCode: Save Checkpoint"
+      },
+      {
+        "command": "vibecode.checkpoint.restore",
+        "title": "VibeCode: Restore Checkpoint"
+      },
+      {
+        "command": "vibecode.mcp.connect",
+        "title": "VibeCode: Connect MCP Server"
+      },
+      {
+        "command": "vibecode.backup.export",
+        "title": "VibeCode: Export Backup"
+      },
+      {
+        "command": "vibecode.backup.import",
+        "title": "VibeCode: Import Backup"
+      },
+      {
+        "command": "vibecode.git.branch",
+        "title": "VibeCode: Git Branch"
+      },
+      {
+        "command": "vibecode.git.log",
+        "title": "VibeCode: Git Log"
+      },
+      {
+        "command": "vibecode.git.push",
+        "title": "VibeCode: Git Push"
+      },
+      {
+        "command": "vibecode.git.pull",
+        "title": "VibeCode: Git Pull"
+      },
+      {
+        "command": "vibecode.git.diff",
+        "title": "VibeCode: Git Diff"
+      },
+      {
+        "command": "vibecode.project.chat",
+        "title": "VibeCode: Project Chat"
+      },
+      {
+        "command": "vibecode.files.scan",
+        "title": "VibeCode: Scan Files"
+      },
+      {
+        "command": "vibecode.supervisor.status",
+        "title": "VibeCode: Supervisor Status"
+      },
+      {
+        "command": "vibecode.models.switchProvider",
+        "title": "VibeCode: Switch Provider"
+      },
+      {
+        "command": "vibecode.supervisor.pause",
+        "title": "VibeCode: Supervisor Pause"
+      },
+      {
+        "command": "vibecode.undo",
+        "title": "VibeCode: Undo"
+      },
+      {
+        "command": "vibecode.index.codebase",
+        "title": "VibeCode: Index Codebase"
+      },
+      {
+        "command": "vibecode.data.classify",
+        "title": "VibeCode: Data Classify"
+      },
+      {
+        "command": "vibecode.models.configure",
+        "title": "VibeCode: Configure Model"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "vibecode.chat",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vibecode.plan",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vibecode.cli.run",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "vibecode.askVibeCode",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^26.6.6",
+    "@types/vscode": "^1.144.0",
+    "@vscode/test-electron": "^3.1.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

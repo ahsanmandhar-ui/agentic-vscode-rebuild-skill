@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeCode Engine Rebuild — Cline skill package</title>
+<style>
+  :root{
+    --bg:#0B1220; --panel:#111B2E; --panel-2:#0E1727; --line:#22314c;
+    --ink:#EAF0FF; --mute:#9FB0CC; --engine:#2F6FED; --signal:#0FB5A6; --warn:#F2B544; --bad:#F2695C;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:48px 24px 80px}
+  header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+  header svg{width:84px;height:84px;flex:0 0 auto}
+  h1{font-size:32px;line-height:1.2;margin:0 0 6px;letter-spacing:-.5px}
+  .sub{color:var(--mute);margin:0}
+  .id{font-family:var(--mono);font-size:13px;color:var(--signal);background:#0d2a2a;
+      border:1px solid #1b4a48;padding:3px 8px;border-radius:6px;display:inline-block;margin-top:10px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);
+     margin:44px 0 14px;font-weight:600}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .card h3{margin:0 0 6px;font-size:15px}
+  .card p{margin:0;color:var(--mute);font-size:14px}
+  code,.mono{font-family:var(--mono);font-size:13px}
+  .path{font-family:var(--mono);font-size:12.5px;color:var(--engine);word-break:break-all}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mute);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  tr:last-child td{border-bottom:none}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--mono);font-size:12.5px}
+  .step{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+  .step.hot{border-color:var(--engine);color:#cfe0ff}
+  .arrow{color:var(--mute)}
+  ul{margin:8px 0 0;padding-left:18px;color:var(--mute)}
+  li{margin:5px 0}
+  li b{color:var(--ink);font-weight:600}
+  .tag{font-family:var(--mono);font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--mute)}
+  .tag.ok{color:#7ae0c8;border-color:#1b4a48;background:#0c2422}
+  .tag.warn{color:var(--warn);border-color:#4a3a12;background:#241c08}
+  .tag.bad{color:var(--bad);border-color:#4a2019;background:#25100d}
+  .note{border-left:3px solid var(--engine);background:var(--panel-2);padding:12px 16px;border-radius:0 8px 8px 0;color:var(--mute);font-size:14px}
+  pre{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;margin:10px 0 0}
+  pre code{color:#cfe0ff}
+  footer{margin-top:56px;color:var(--mute);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+  .kpi{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px}
+  .kpi div{font-family:var(--mono)}
+  .kpi span{display:block;font-size:22px;color:var(--ink)}
+  .kpi small{color:var(--mute);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg viewBox="0 0 128 128" role="img" aria-label="VibeCode Engine mark">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M64 12 109 38V90L64 116 19 90V38Z" stroke="#2F6FED" stroke-width="8"/>
+        <path d="M42 48 64 88 86 48" stroke="#EAF0FF" stroke-width="10"/>
+        <circle cx="93" cy="40" r="9" fill="#0FB5A6"/>
+      </g>
+    </svg>
+    <div>
+      <h1>VibeCode Engine Rebuild</h1>
+      <p class="sub">A reusable Cline skill that repairs, redesigns, tests and packages an existing VS Code extension — in place.</p>
+      <span class="id">AhsanMandhar.vibecode-engine-pro-free</span>
+    </div>
+  </header>
+
+  <div class="kpi">
+    <div><span>1</span><small>skill</small></div>
+    <div><span>9</span><small>references</small></div>
+    <div><span>11</span><small>milestones</small></div>
+    <div><span>21</span><small>validator checks</small></div>
+    <div><span>0</span><small>secrets in package</small></div>
+  </div>
+
+  <h2>Lifecycle the skill enforces</h2>
+  <div class="flow">
+    <span class="step">INSPECT</span><span class="arrow">→</span>
+    <span class="step">DIAGNOSE</span><span class="arrow">→</span>
+    <span class="step">PLAN</span><span class="arrow">→</span>
+    <span class="step hot">APPROVE</span><span class="arrow">→</span>
+    <span class="step">IMPLEMENT</span><span class="arrow">→</span>
+    <span class="step">TEST</span><span class="arrow">→</span>
+    <span class="step">PACKAGE</span><span class="arrow">→</span>
+    <span class="step hot">VERIFY</span>
+  </div>
+  <p class="note" style="margin-top:16px">
+    No design work before evidence. No "done" without test output. Generated code is <b>ATTEMPTED</b>, never
+    <b>VERIFIED</b>. The approval gate sits before architecture and security changes, not after them.
+  </p>
+
+  <h2>Package contents</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>SKILL.md <span class="tag ok">entry</span></h3>
+      <p class="path">.cline/skills/vibecode-engine-rebuild/SKILL.md</p>
+      <p style="margin-top:8px">Identity contract, non-negotiables, 60-second session boot, 11 milestone gates,
+         environment assessment, skill onboarding order, agent contract, credentials, memory, recovery,
+         completion checklist and the final report format.</p>
+    </div>
+    <div class="card">
+      <h3>Fallback rule <span class="tag warn">if skills disabled</span></h3>
+      <p class="path">.clinerules/vibecode-engine-rebuild.md</p>
+      <p style="margin-top:8px">Condensed always-on mirror, for Cline configurations where the Skills feature
+         is turned off. The skill tells the agent to state which mechanism it actually used.</p>
+    </div>
+  </div>
+
+  <h2>References, loaded per milestone</h2>
+  <div class="card" style="padding:8px 18px">
+    <table>
+      <thead><tr><th>File</th><th>Owns</th><th>Used at</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">REPO_AUDIT.md</td><td>Read-only recon commands, per-area checklist, reproduction classes, baseline report template, upgrade-contract lookup</td><td>M1</td></tr>
+        <tr><td class="mono">ARCHITECTURE.md</td><td>Layer map, core types, task state machine with invariants, preservation rules, tool executor, context-file schemas, disposal</td><td>M2–M8</td></tr>
+        <tr><td class="mono">SECURITY.md</td><td>Assets, trust boundaries, 15-threat catalogue with tests, permission defaults, path table, credential rules, review gate</td><td>M2, M4, M5</td></tr>
+        <tr><td class="mono">SKILL_FORMAT.md</td><td>Canonical format + strict schema, storage layout, integrity, lifecycle states, format adapters, inspector rules</td><td>M4</td></tr>
+        <tr><td class="mono">BUILTIN_SKILLS.md</td><td>Specs for the 14 bundled skills and an authoring template</td><td>M4</td></tr>
+        <tr><td class="mono">PROVIDER_ROUTING.md</td><td>Adapter interface, contract tests, error normalization table, account records, switch procedure, context budget</td><td>M6</td></tr>
+        <tr><td class="mono">TESTING.md</td><td>Baseline discipline, four test levels, required matrix, rules of evidence, manual smoke script</td><td>M3–M11</td></tr>
+        <tr><td class="mono">UI_SPEC.md</td><td>Navigation, per-screen states, message protocol, accessibility, beginner safety rails, acceptance checks</td><td>M8</td></tr>
+        <tr><td class="mono">RELEASE.md</td><td>Semver rules, pre-package validation, packaging + archive inspection, isolated install, upgrade test, notices</td><td>M11</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Separation the skill refuses to blur</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Inspection</h3><p>Static characteristics of a candidate: metadata, commands, network, license, risk score. Reduces risk; proves nothing.</p></div>
+    <div class="card"><h3>Approval</h3><p>The user's recorded consent to install, with the permissions that were shown at that moment.</p></div>
+    <div class="card"><h3>Activation</h3><p>The skill's instructions becoming available for one task. Grants no permissions at all.</p></div>
+    <div class="card"><h3>Tool authorization</h3><p>The permission engine's per-action decision at run time. The only thing that can allow an effect.</p></div>
+  </div>
+
+  <h2>Free-first onboarding order</h2>
+  <div class="grid g3">
+    <div class="card"><h3>1 · Security &amp; trust</h3><p>Permission inspector, skill inspector/validator. Declining these never weakens the built-in safeguards — those live in code.</p></div>
+    <div class="card"><h3>2 · Decision-making</h3><p>Error diagnoser, planner &amp; context recovery, resource-aware execution.</p></div>
+    <div class="card"><h3>3 · Technical</h3><p>Codebase explorer, test verifier, Git review, dependency/license audit, VSIX release.</p></div>
+  </div>
+  <p class="note" style="margin-top:16px">
+    Every candidate is shown as a card with <b>purpose · source at a pinned ref · license · price model ·
+    permissions · risk · required/optional</b> and <span class="mono">[Inspect] [Install] [Skip]</span>.
+    "Free" means the licence permits the use — not merely "no card required today".
+  </p>
+
+  <h2>Account switching, without abuse</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Situation</th><th>Correct response</th><th>Never</th></tr></thead>
+      <tbody>
+        <tr><td>Context window exhausted</td><td>Compact/summarise, checkpoint, continue on the same provider</td><td>Treat a bigger window as an account problem</td></tr>
+        <tr><td>Rate limit / quota</td><td>Honour <span class="mono">Retry-After</span>; offer an <b>explicitly authorised</b> fallback or ask</td><td>Rotate accounts to dodge limits, caps or billing</td></tr>
+        <tr><td>Auth expired</td><td>Refresh via the provider's documented flow, or ask for re-authentication</td><td>Scrape tokens, cookies or browser profiles</td></tr>
+        <tr><td>Transient 5xx / network</td><td>Bounded retries, exponential backoff with jitter, per-task budget</td><td>Retry storms</td></tr>
+        <tr><td>Any switch, when it is right</td><td>Checkpoint → record reason → verify eligibility → rebuild context from files + git → resume from last verified step → re-verify</td><td>Lose uncommitted work or user instructions</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Brand assets shipped</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Mark</h3>
+      <p>Pointy-top hexagon “engine block”, chevron cut, one teal node. Hand-authored geometry from
+      <span class="mono">design/LOGO_BRIEF.md</span> §2 — deterministic, no gradients, no lettering.</p>
+      <div style="display:flex;gap:18px;align-items:flex-end;margin-top:14px">
+        <svg width="24" height="24" viewBox="0 0 128 128" aria-label="24px"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 12 109 38V90L64 116 19 90V38Z" stroke="#2F6FED" stroke-width="8"/><path d="M42 48 64 88 86 48" stroke="#EAF0FF" stroke-width="10"/><circle cx="93" cy="40" r="9" fill="#0FB5A6"/></g></svg>
+        <svg width="48" height="48" viewBox="0 0 128 128" aria-label="48px"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 12 109 38V90L64 116 19 90V38Z" stroke="#2F6FED" stroke-width="8"/><path d="M42 48 64 88 86 48" stroke="#EAF0FF" stroke-width="10"/><circle cx="93" cy="40" r="9" fill="#0FB5A6"/></g></svg>
+        <svg width="84" height="84" viewBox="0 0 128 128" aria-label="84px"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M64 12 109 38V90L64 116 19 90V38Z" stroke="#2F6FED" stroke-width="8"/><path d="M42 48 64 88 86 48" stroke="#EAF0FF" stroke-width="10"/><circle cx="93" cy="40" r="9" fill="#0FB5A6"/></g></svg>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Files</h3>
+      <ul>
+        <li><span class="mono">media/logo/activity-bar.svg</span> — 24 px, <span class="mono">currentColor</span></li>
+        <li><span class="mono">media/logo/icon.svg</span>, <span class="mono">icon-light.svg</span>, <span class="mono">icon-dark-on-navy.svg</span></li>
+        <li><span class="mono">media/logo/icon-128.png</span>, <span class="mono">icon-256.png</span> — manifest icon</li>
+        <li><span class="mono">media/logo/welcome.svg</span> — lockup</li>
+        <li><span class="mono">design/preview.png</span> — 16/24/48/128 px on light + dark</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Install &amp; invoke</h2>
+  <pre><code># project skill (travels with the repo)
+mkdir -p &lt;your-extension-repo&gt;/.cline/skills
+cp -r .cline/skills/vibecode-engine-rebuild &lt;your-extension-repo&gt;/.cline/skills/
+
+# then in VS Code: Settings → Features → Enable Skills
+# Cline panel → Skills tab → "vibecode-engine-rebuild" · or /skills · or name it in the prompt</code></pre>
+  <p style="color:var(--mute);font-size:14px;margin-top:14px">
+    Validate this package any time: <span class="mono">python3 tools/validate_skill.py</span> — 21 checks over
+    structure, frontmatter, cross-links, placeholder markers, SVG/PNG validity and secret patterns.
+  </p>
+
+  <h2>What is not done yet</h2>
+  <div class="card">
+    <ul style="margin:0">
+      <li><b>The extension itself is untouched.</b> No source repository was supplied; this package is the workflow and its assets.</li>
+      <li><b>Activation inside a live Cline session is unverified</b> — no VS Code or Cline binary exists in this sandbox. Static validation only.</li>
+      <li><b>Open questions</b> that block Milestone 1: source repo location, baseline `.vsix` for the upgrade test, first-release scope, required providers, the exact meaning of “Ponytail”, and the extension's own license.</li>
+    </ul>
+  </div>
+
+  <footer>
+    MIT-licensed skill package · target identity <span class="mono">AhsanMandhar.vibecode-engine-pro-free</span> preserved ·
+    no secrets, no telemetry, no network calls in this page.
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+dist/
+*.vsix
+
+# Test artifacts
+.vitest/
+.vscode-test/
+.tmpout/
+tmpvscode/
+*.log
+*.txt
+audit.jsonl
+last-crash.json
+
+# Local scratch / research clones
+.tmpout/
+tmpvscode/
+hallmark-extracted/
+hallmark-repo/
+research/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Keep source, docs, skill, design, media, tools

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "out",
+    "rootDir": "src",
+    "module": "CommonJS",
+    "moduleResolution": "Bundler",
+    "types": ["node", "vscode", "mocha"]
+  },
+  "include": ["src"]
+}
