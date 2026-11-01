@@ -1,5 +1,5 @@
 ---
-name: vibecode-engine-rebuild
+name: agentic-vscode-rebuild
 description: Use when the user asks to rebuild, repair, redesign, test, or package the VibeCode Engine VS Code extension (AhsanMandhar.vibecode-engine-pro-free) — including adding agentic coding, skill management, provider routing, authorized account switching, project-context memory, or producing a tested VSIX upgrade. Also use when resuming interrupted work on this project.
 version: 1.0.0
 license: MIT
