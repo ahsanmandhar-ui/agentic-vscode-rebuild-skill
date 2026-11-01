@@ -108,6 +108,20 @@ Each skill is an instruction bundle that runs inside the permission engine and g
 - needs: `read` · risk: **low**
 
 
+---
+
+## 🤖 Multi-agent support
+
+This repo ships instruction files for multiple coding agents:
+
+| Agent | File |
+|---|---|
+| Claude Code | `CLAUDE.md` |
+| Codex / OpenCode | `AGENTS.md` |
+
+All agents follow the same workflow and non-negotiables defined above.
+
+
 ### 7. error-diagnoser
 > **Diagnoses build/test/runtime failures; produces a reproduction before a fix.**
 - needs: `read`, `exec:test` · risk: **medium**
